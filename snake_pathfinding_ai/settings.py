@@ -9,6 +9,7 @@ GAP_SIZE = 2 # Gap between adjacent squares
 SURFACE_CLR = (15, 15, 15)
 GRID_CLR = (255, 255, 255)
 SNAKE_CLR = (50, 255, 50)
+TAIL_CLR = (50,255,255)
 APPLE_CLR = (0, 0, 255)
 HEAD_CLR = (0, 150, 0)
 VIRTUAL_SNAKE_CLR = (255, 255, 255)

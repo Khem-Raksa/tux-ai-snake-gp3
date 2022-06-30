@@ -1,4 +1,4 @@
-from xml.dom import xmlbuilder
+
 import pygame
 from settings import *
 from random import randrange
@@ -22,25 +22,25 @@ class Square:
         if self.dir == [-1, 0]:
             if self.is_tail:
                 # jung bej, jung bej, width, height
-                pygame.draw.rect(self.surface, clr, (x * ss + gs , y * ss + gs  , ss - 2*gs , ss - 2*gs))
+                pygame.draw.rect(self.surface, TAIL_CLR, (x * ss + gs , y * ss + gs  , ss - 2*gs , ss - 2*gs))
             else:
                 pygame.draw.rect(self.surface, clr, (x * ss + gs, y * ss + gs, ss, ss - 2*gs))
 
         if self.dir == [1, 0]:
             if self.is_tail:
-                pygame.draw.rect(self.surface, clr, (x * ss + gs, y * ss + gs, ss - 2*gs, ss - 2*gs))
+                pygame.draw.rect(self.surface, TAIL_CLR, (x * ss + gs, y * ss + gs, ss - 2*gs, ss - 2*gs))
             else:
                 pygame.draw.rect(self.surface, clr, (x * ss - gs, y * ss + gs, ss, ss - 2*gs))
 
         if self.dir == [0, 1]:
             if self.is_tail:
-                pygame.draw.rect(self.surface, clr, (x * ss + gs, y * ss + gs, ss - 2*gs, ss - 2*gs))
+                pygame.draw.rect(self.surface, TAIL_CLR, (x * ss + gs, y * ss + gs, ss - 2*gs, ss - 2*gs))
             else:
                 pygame.draw.rect(self.surface, clr, (x * ss + gs, y * ss - gs, ss - 2*gs, ss))
 
         if self.dir == [0, -1]:
             if self.is_tail:
-                pygame.draw.rect(self.surface, clr, (x * ss + gs, y * ss + gs, ss - 2*gs, ss - 2*gs))
+                pygame.draw.rect(self.surface, TAIL_CLR, (x * ss + gs, y * ss + gs, ss - 2*gs, ss - 2*gs))
             else:
                 pygame.draw.rect(self.surface, clr, (x * ss + gs, y * ss + gs, ss - 2*gs, ss))
 
@@ -53,7 +53,7 @@ class Square:
         self.pos[1] += self.dir[1]
 
     def hitting_wall(self):
-        # lers row
+        #if any of our coordinates is out of bound
         if (self.pos[0] <= -1) or (self.pos[0] >= ROWS) or (self.pos[1] <= -1) or (self.pos[1] >= ROWS):
             return True
         else:

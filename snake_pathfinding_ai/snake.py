@@ -16,7 +16,7 @@ class Snake:
         self.dir = [-1, 0]
         self.score = 0
         self.moves_without_eating = 0
-        #apple is an instance of square, 
+        #apple is an instance of square 
         self.apple = Square([randrange(ROWS), randrange(ROWS)], self.surface, is_apple=True)
 
         self.squares = []

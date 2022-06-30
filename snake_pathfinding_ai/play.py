@@ -1,5 +1,6 @@
 from snake import *
 from square import *
+import sys
 from os import environ
 
 
@@ -39,7 +40,11 @@ def play_game():
         snake.update()
         clock.tick(1)
         pygame.display.update() # make the display appear of the monitor
+    
+    pygame.quit()
+    sys.exit()
 
 #is used to execute some code only if the file was run directly, and not imported
 if __name__ == '__main__':
     play_game()
+
